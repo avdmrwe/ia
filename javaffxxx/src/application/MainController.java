@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 
 public class MainController implements Initializable{
@@ -19,25 +20,38 @@ public class MainController implements Initializable{
 	@FXML
 	private Button clickme;
 	
-	private double deltaX = 5;
+	private double delta = 2;
+
 	
 	
 	Timeline timeline = new Timeline(new KeyFrame(Duration.millis(10), new EventHandler<ActionEvent>() {
 
+		
 		@Override
 		@FXML
 		public void handle(ActionEvent event) {
-			clickme.setLayoutX(clickme.getLayoutX() + deltaX);
-			
+			if(Hello.keyIsPressed == 1) {
+				if(Hello.theKey == "D") {
+					clickme.setLayoutX(clickme.getLayoutX() + delta);
+				}
+				else if(Hello.theKey == "A") {
+					clickme.setLayoutX(clickme.getLayoutX() - delta);
+				}
+				else if(Hello.theKey == "W") {
+					clickme.setLayoutY(clickme.getLayoutY() - delta);
+				}
+				else if(Hello.theKey == "S") {
+					clickme.setLayoutY(clickme.getLayoutY() + delta);
+				}
+				
+			}
 		}
-			
+		
 	}));
 	
 	public void handle(ActionEvent event) {
-		clickme.setLayoutX(clickme.getLayoutX() + deltaX);
 		
 	}
-
 
 
 	@Override
@@ -46,4 +60,3 @@ public class MainController implements Initializable{
 		timeline.play();
 	}
 }
-
