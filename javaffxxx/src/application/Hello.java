@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 public class Hello extends Application {
 	
+	public static int keyIsPressed = 0;
+	public static String theKey = null;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -29,9 +31,20 @@ public class Hello extends Application {
 			        @Override
 			        public void handle(KeyEvent event) {
 			        	System.out.println("key pressed: " + event.getCode().toString());
-			        	
+			        	keyIsPressed = 1;
+			        	theKey = event.getCode().toString();
 			        }
 			    });
+			    
+			    root.setOnKeyReleased(new EventHandler<KeyEvent>() {
+			    	@Override
+			    	public void handle(KeyEvent event) {
+			        	System.out.println("key released: " + event.getCode().toString());
+			        	keyIsPressed = 0;
+			        	theKey = event.getCode().toString();
+			    	}
+			    });
+
 
 
 			} catch (IOException e) {
@@ -51,7 +64,6 @@ public class Hello extends Application {
 	}
 }
 
-		
-
+	
 	//i <3 anja
 
