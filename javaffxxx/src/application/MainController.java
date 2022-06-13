@@ -11,15 +11,32 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
 public class MainController implements Initializable{
 	
 	@FXML
+	private Pane scenePane;
+
+	@FXML
 	private Button clickme;
 	
+	@FXML
+	private Circle circleONE;
+	
+	@FXML
+	private Circle circleTWO;
+
+	@FXML
+	private Circle circleTHREE;
+
+		
 	private double delta = 2;
 
 	
@@ -43,8 +60,9 @@ public class MainController implements Initializable{
 				else if(Hello.theKey == "S") {
 					clickme.setLayoutY(clickme.getLayoutY() + delta);
 				}
-				
 			}
+				
+				
 		}
 		
 	}));
@@ -52,11 +70,34 @@ public class MainController implements Initializable{
 	public void handle(ActionEvent event) {
 		
 	}
+	
+	public boolean outOfBounds(Node node) {
+        Bounds bounds = node.getBoundsInLocal();
+        boolean rightBorder = clickme.getLayoutX() >= (bounds.getMaxX() - clickme.getWidth());
+        boolean leftBorder = clickme.getLayoutX() <= (bounds.getMinX() + clickme.getWidth());
+        boolean bottomBorder = clickme.getLayoutY() >= (bounds.getMaxY() - clickme.getWidth());
+        boolean topBorder = clickme.getLayoutY() <= (bounds.getMinY() + clickme.getWidth());
+
+        if (rightBorder || leftBorder) {
+            System.out.println("hit vertical border");
+        }
+        if (bottomBorder || topBorder) {
+            System.out.println("hit horizontal border");
+        }
+        return false;
+    }
+
+
 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
+		isDraggable.dragThis(circleONE);
+		isDraggable.dragThis(circleTWO);
+		isDraggable.dragThis(circleTHREE);
+
+
 	}
 }
