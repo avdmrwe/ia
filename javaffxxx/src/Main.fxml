@@ -2,14 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<Pane fx:id="scenePane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Button fx:id="clickme" layoutX="37.0" layoutY="33.0" mnemonicParsing="false" onAction="#handle" prefHeight="76.0" prefWidth="158.0" text="clickme">
+      <Button fx:id="clickme" layoutX="220.0" layoutY="185.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="158.0" text="clickme" textAlignment="CENTER" textFill="#4b791d" underline="true">
          <font>
-            <Font name="Courier New" size="23.0" />
+            <Font name="Courier" size="28.0" />
          </font>
       </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b8d796" height="67.0" layoutX="14.0" layoutY="14.0" stroke="#5e9e4e" strokeType="INSIDE" strokeWidth="5.0" width="259.0" />
+      <Circle fx:id="circleONE" fill="#5e9e4e" layoutX="63.0" layoutY="48.0" radius="24.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fx:id="circleTWO" fill="#5e9e4e" layoutX="144.0" layoutY="48.0" radius="24.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fx:id="circleTHREE" fill="#5e9e4e" layoutX="226.0" layoutY="48.0" radius="24.0" stroke="TRANSPARENT" strokeType="INSIDE" />
    </children>
 </Pane>
