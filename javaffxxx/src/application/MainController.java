@@ -23,16 +23,22 @@ public class MainController implements Initializable{
 	
 	
 	Timeline timeline = new Timeline(new KeyFrame(Duration.millis(10), new EventHandler<ActionEvent>() {
-		
+
+		@Override
 		@FXML
-		public void handle(ActionEvent actionEvent) {
+		public void handle(ActionEvent event) {
 			clickme.setLayoutX(clickme.getLayoutX() + deltaX);
-
+			
 		}
-	
+			
 	}));
-
 	
+	public void handle(ActionEvent event) {
+		clickme.setLayoutX(clickme.getLayoutX() + deltaX);
+		
+	}
+
+
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
