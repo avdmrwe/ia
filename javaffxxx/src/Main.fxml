@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane prefHeight="447.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Button fx:id="clickme" layoutX="37.0" layoutY="33.0" mnemonicParsing="false" onAction="#handle" prefHeight="76.0" prefWidth="158.0" text="clickme">
+      <Button fx:id="clickme" layoutX="225.0" layoutY="200.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="158.0" text="clickme" textAlignment="CENTER" textFill="#4b791d" underline="true">
          <font>
-            <Font name="Courier New" size="23.0" />
+            <Font name="Courier" size="28.0" />
          </font>
       </Button>
+      <Pane fx:id="scenePane" accessibleRole="TAB_PANE" cache="true" layoutY="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="597.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b8d796" height="67.0" layoutX="24.0" layoutY="24.0" stroke="#5e9e4e" strokeType="INSIDE" strokeWidth="5.0" width="259.0" />
+            <Line fx:id="rightLine" endX="597.0" endY="445.0" startX="597.0" />
+            <Circle fx:id="circleTHREE" fill="#5e9e4e" layoutX="243.0" layoutY="58.0" radius="24.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fx:id="circleONE" fill="#5e9e4e" layoutX="154.0" layoutY="58.0" radius="24.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fx:id="circleTWO" fill="#5e9e4e" layoutX="62.0" layoutY="58.0" radius="24.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Rectangle fx:id="snapTo" arcHeight="5.0" arcWidth="5.0" fill="#b8d796" height="102.0" layoutX="474.0" layoutY="24.0" stroke="#5e9e4e" strokeType="INSIDE" strokeWidth="5.0" width="109.0" />
+         </children>
+      </Pane>
    </children>
-</Pane>
+</AnchorPane>
+
